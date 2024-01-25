@@ -4,8 +4,7 @@ using System.Text;
 namespace EncryptionManager.Hash;
 public static class HMACHasher
 {
-    private static readonly string secretKey = "mySuperSecretKeyy";
-    public static async Task<string> HashValue(string valueToHash)
+    public static async Task<string> HashValue(string valueToHash, string secretKey)
     {
         var strStreamOne = new MemoryStream(Encoding.UTF8.GetBytes(valueToHash));
         byte[] hashOne;

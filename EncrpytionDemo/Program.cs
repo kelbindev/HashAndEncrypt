@@ -9,8 +9,11 @@ Console.WriteLine("ORIGINAL VALUE: " + ValueToBeProcessed);
 Console.WriteLine("HASH START===============================================");
 Console.WriteLine("==============================================================================================");
 Console.WriteLine("MD5 Hash: " + await MD5Hasher.HashValue(ValueToBeProcessed));
+
 Console.WriteLine("SHA256 Hash: " + await SHA256Hasher.HashValue(ValueToBeProcessed));
-Console.WriteLine("HMAC Hash: " + await HMACHasher.HashValue(ValueToBeProcessed));
+
+const string hmacSecretKey = "MyUltimateSecretKey12345";
+Console.WriteLine("HMAC Hash: " + await HMACHasher.HashValue(ValueToBeProcessed, hmacSecretKey));
 Console.WriteLine("==============================================================================================");
 Console.WriteLine("HASH DONE===============================================");
 Console.WriteLine();
